@@ -13,6 +13,7 @@ import com.example.kotlindemo.databinding.FragmentLoginBinding
 import com.example.kotlindemo.utils.CacheUtil
 import com.example.kotlindemo.viewmodel.request.RequestLoginViewModel
 import com.example.kotlindemo.viewmodel.state.LoginViewModel
+import com.qmuiteam.qmui.util.QMUIKeyboardHelper
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper
 import kotlinx.android.synthetic.main.title_topbar.*
 import me.hgj.jetpackmvvm.ext.nav
@@ -97,10 +98,13 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>() {
             when{
                 mViewModel.username.get().isEmpty() -> Toast.makeText(this@LoginFragment.context,"请填写账号",Toast.LENGTH_SHORT).show()
                 mViewModel.passwrod.get().isEmpty() -> Toast.makeText(this@LoginFragment.context,"请填写密码",Toast.LENGTH_SHORT).show()
-                else -> requestLoginViewModel.login(
-                    mViewModel.username.get(),
-                    mViewModel.passwrod.get()
-                )
+                else -> {
+                    QMUIKeyboardHelper.hideKeyboard(view)
+                    requestLoginViewModel.login(
+                        mViewModel.username.get(),
+                        mViewModel.passwrod.get()
+                    )
+                }
             }
 
         }
