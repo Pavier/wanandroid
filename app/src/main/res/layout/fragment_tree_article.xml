@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.fragment.tree.TreeArticleFragment">
+
+        <include layout="@layout/title_topbar" />
+
+        <com.qmuiteam.qmui.widget.tab.QMUITabSegment2
+            android:id="@+id/tabView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            />
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/tree_article_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+</layout>

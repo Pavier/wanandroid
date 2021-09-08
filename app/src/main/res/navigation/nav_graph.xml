@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.kotlindemo.ui.fragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+
+        <action
+            android:id="@+id/action_mainFragment_to_treeArticleFragment"
+            app:destination="@id/treeArticleFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/webFragment"
+        android:name="com.example.kotlindemo.ui.fragment.web.WebFragment"
+        android:label="fragment_web"
+        tools:layout="@layout/fragment_web"
+        />
+
+    <action
+        android:id="@+id/action_to_webFragment"
+        app:destination="@id/webFragment"
+        />
+    <fragment
+        android:id="@+id/treeArticleFragment"
+        android:name="com.example.kotlindemo.ui.fragment.tree.TreeArticleFragment"
+        android:label="TreeArticleFragment" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.kotlindemo.ui.fragment.login.LoginFragment"
+        android:label="LoginFragment" />
+    <action android:id="@+id/action_to_loginFragment"
+        app:destination="@id/loginFragment"/>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.kotlindemo.ui.fragment.search.SearchFragment"
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_searchDetailFragment"
+            app:destination="@id/searchDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchDetailFragment"
+        android:name="com.example.kotlindemo.ui.fragment.search.SearchDetailFragment"
+        android:label="SearchDetailFragment" />
+
+</navigation>
